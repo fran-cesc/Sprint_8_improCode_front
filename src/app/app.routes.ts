@@ -3,11 +3,26 @@ import { HomeComponent } from './pages/home/home.component';
 import { MapComponent } from './pages/map/map.component';
 import { CalendarComponent } from './pages/calendar/calendar.component';
 import { GraphComponent } from './pages/graph/graph.component';
+import { AddRunerComponent } from './pages/add-runer/add-runer.component';
 
 export const routes: Routes = [
   {
-    path: 'home',
-    component: HomeComponent
+    path: 'runners',
+    component: HomeComponent,
+    children: [
+      {
+        path: 'new',
+        component: AddRunerComponent
+      },
+      {
+        path: 'edit',
+        component: AddRunerComponent
+      },
+      {
+        path: 'runners/id',
+        component: AddRunerComponent
+      }
+    ]
   },
   {
     path: 'map',
@@ -23,7 +38,7 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: '/runners',
     pathMatch: 'full'
   }
 ];

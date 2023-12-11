@@ -1,1 +1,71 @@
-<p>home works!</p>
+<div class="container mt-2">
+  <table class="table table-sm table-responsive table-borderless">
+      <thead class="">
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Gender</th>
+          <th>Country</th>
+          <th>Race time</th>
+          <th>Best time</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+    <tbody class="">
+      @for (runner of runners; track runner.ID){
+        <tr>
+          <td>{{runner.ID}}</td>
+          <td>{{runner.first_name}}</td>
+          <td>{{runner.last_name}}</td>
+          <td>{{runner.gender}}</td>
+          <td>{{runner.country}}</td>
+          <td>{{runner.race_time}}</td>
+          <td>{{runner.best_time}}</td>
+          <td>
+            <button type="button" class="btn btn-sm mx-1 btn-info"
+              data-bs-toggle="modal" data-bs-target="#editRunnerModal"
+              (click)="editRunner(runner)">
+              Edit</button>
+            <button type="button" class="btn btn-sm btn-danger"
+               (click)="delRunner(runner.ID)">Del</button>
+          </td>
+        </tr>
+          <br/>
+        }
+    </tbody>
+  </table>
+
+  <button type="button" class="btn btn-success"
+    data-bs-toggle="modal" data-bs-target="#runnerModal">
+    Add new runner
+  </button>
+
+  <!-- Add Runner Modal -->
+  <div class="modal modal-lg fade" tabindex="-1" id="runnerModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Add new runner</h5>
+        </div>
+        <div class="modal-body">
+          <app-runner-modal (onCloseModal)="onCloseModal($event)"></app-runner-modal>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Edit Runner Modal -->
+    <div class="modal modal-lg fade" tabindex="-1" id="editRunnerModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Edit runner</h5>
+          </div>
+          <div class="modal-body">
+            <app-editRunner-modal [runner]="runner" (onCloseModal)="onCloseModal($event)"></app-editRunner-modal>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>
