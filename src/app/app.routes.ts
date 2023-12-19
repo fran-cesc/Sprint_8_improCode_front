@@ -3,26 +3,31 @@ import { HomeComponent } from './pages/home/home.component';
 import { MapComponent } from './pages/map/map.component';
 import { CalendarComponent } from './pages/calendar/calendar.component';
 import { GraphComponent } from './pages/graph/graph.component';
-import { AddRunerComponent } from './pages/add-runer/add-runer.component';
+import { AddRunnerComponent } from './components/add-runner/add-runner.component';
 
 export const routes: Routes = [
   {
     path: 'runners',
+    title: 'runners',
     component: HomeComponent,
+  },
+  {
+    path: 'runners',
     children: [
       {
         path: 'new',
-        component: AddRunerComponent
+        title: 'Add new runner',
+        component: AddRunnerComponent
       },
       {
-        path: 'edit',
-        component: AddRunerComponent
+        path: 'edit/:id',
+        component: AddRunnerComponent
       },
       {
-        path: 'runners/id',
-        component: AddRunerComponent
+        path: ':id',
+        component: AddRunnerComponent
       }
-    ]
+    ],
   },
   {
     path: 'map',
