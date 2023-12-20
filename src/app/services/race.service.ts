@@ -15,6 +15,9 @@ export class RaceService {
     return this.http.get<Runner[]>(`${this.baseUrl}/runners`);
   }
 
+  getTotals(): Observable<any[]>{
+    return this.http.get<any[]>(`${this.baseUrl}/graph`);
+  }
 
   delRunner(id: number): Observable<boolean>{
       return this.http.delete(`${this.baseUrl}/runners/${id}`)
