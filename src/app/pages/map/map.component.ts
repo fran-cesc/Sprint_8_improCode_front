@@ -41,10 +41,6 @@ export class MapComponent implements AfterViewInit, OnInit{
     this.mapService.getPositions().subscribe( (positions) => {
 
       this.markers = positions;
-      console.log('Entrem al subscribe');
-      console.log(this.markers);
-      console.log(this.markers[0]);
-      console.log(this.markers[0].latitude);
 
       for (let i = 0; i < this.markers.length; i++){
 
