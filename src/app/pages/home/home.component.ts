@@ -14,6 +14,7 @@ import { EditRunnerComponent } from '../../components/edit-runner/edit-runner.co
     styleUrl: './home.component.css',
     imports: [CommonModule, RouterModule]
 })
+
 export class HomeComponent {
   public runners: Runner[] = [];
   public runner!: Runner;
@@ -39,8 +40,6 @@ export class HomeComponent {
   editRunner(runner: Runner){
     const modalRef = this.modalService.open(EditRunnerComponent);
     modalRef.componentInstance.runner = runner;
-    // this.runner = runner;
-    // console.log(this.runner);
   }
 
   addRunner(){
@@ -49,9 +48,3 @@ export class HomeComponent {
 
 }
 
-// const modalref = this.modalService.open(AddReservationComponent);
-//       modalref.componentInstance.hotels = this.hotels;
-//       modalref.closed.subscribe((reservationCreated: Reservation) => {
-//         console.log(reservationCreated);
-//         this.reservations.push(reservationCreated);
-//       });
