@@ -25,9 +25,9 @@ export class CalendarComponent {
       listPlugin
     ],
     events: [
-      { title: 'Marató', date: '2023-12-23' },
-      { title: 'Sant Silvestre 10K', date: '2023-12-31' },
-      { title: 'New Year race', date: '2024-01-01' },
+      { title: 'Bcn Marathon', date: '2023-12-23' },
+      { title: 'Saint Silvester 10K', date: '2023-12-31' },
+      { title: 'New Year half Marathon', date: '2024-01-01' },
       { title: 'Valentine day race', date: '2024-02-14' },
       { title: 'February 5K', date: '2024-02-27' },
 
