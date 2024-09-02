@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Runner } from '../../interfaces/runners.interface.ts';
+import { Runner } from '../../interfaces/runners.interface';
 import { RaceService } from '../../services/race.service.js';
 import { Router, RouterModule } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';

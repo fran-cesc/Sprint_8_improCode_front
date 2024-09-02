@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Runner } from '../interfaces/runners.interface.ts';
 import { Observable, catchError, map, of } from 'rxjs';
+import { Runner } from '../interfaces/runners.interface';
 
 @Injectable({
   providedIn: 'root'

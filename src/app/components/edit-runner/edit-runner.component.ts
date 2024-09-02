@@ -4,7 +4,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { Router } from '@angular/router';
 import { RaceService } from '../../services/race.service.js';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Runner } from '../../interfaces/runners.interface.ts.js';
+import { Runner } from '../../interfaces/runners.interface.js';
 import { ValidatorsService } from '../../services/validators.service.js';
 
 @Component({
